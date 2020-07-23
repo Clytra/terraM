@@ -1,0 +1,74 @@
+get user by id
+
+url = "{{url}}/api/user/1"
+
+payload = "{\n\t\"username\": \"Test01\",\n\t\"password\": \"qwerty\"\n}"
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("GET", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+
+##############################################################
+
+login
+
+url = "{{url}}/api/login"
+
+payload = "{\n\t\"username\": \"Test01\",\n\t\"password\": \"qwerty\"\n}"
+headers = {
+  'Authorization': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+
+#######################################################################
+
+register
+
+url = "{{url}}/api/register"
+
+payload = "{\n\t\"username\": \"Test01\",\n\t\"password\": \"qwerty\",\n\t\"first_name\": \"Imię01\",\n\t\"last_name\": \"Nazwisko01\",\n\t\"phone_number\": \"111111\",\n\t\"email\": \"test@o2.pl\"\n}"
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+
+###########################################################################
+
+add tournament
+
+url = "{{url}}/api/add_tournament"
+
+payload = "{\n\t\"tournament_name\": \"turniej1\"\n}\n"
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+
+###############################################################################
+
+get list by tournament id
+
+url = "{{url}}/api/scores/1"
+
+payload = "{\n\t\"username\": \"Test01\",\n\t\"password\": \"qwerty\"\n}"
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("GET", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+
+#############################################################################
